@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Taksimetre {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int mesafe;
+        double tutar = 10;
+        System.out.print("Gideceğiniz mesafeyi giriniz: ");
+        mesafe = input.nextInt();
+        tutar += mesafe * 2.20;
+        tutar = tutar < 20 ? 20 : tutar ;
+        System.out.print("Ödenecek Tutar = " + tutar + "TL");
+    }
+}
