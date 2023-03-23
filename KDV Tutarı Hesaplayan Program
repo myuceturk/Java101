@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class KdvHesapla {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double sonuc = 0, para, kdv;
+        System.out.print("Miktarı Giriniz: ");
+        para = input.nextDouble();
+        kdv = para < 1000 ? 0.18 : 0.08;
+        sonuc += para + (para * kdv);
+        System.out.print("KDV'siz Fiyat: " + para + "\nKDV'li Fiyat:" + sonuc + "\nKDV Oranı:%" + kdv * 100);
+    }
+}
