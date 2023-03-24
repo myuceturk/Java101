@@ -1,0 +1,37 @@
+import java.util.Objects;
+import java.util.Scanner;
+
+public class KullaniciGirisi {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String username, password, choice, newpassword;
+        System.out.print("Kullanıcı adınızı giriniz:");
+        username = input.nextLine();
+        System.out.print("Şifrenizi giriniz:");
+        password = input.nextLine();
+
+        if (username.equals("patika") && password.equals("123456")) {
+            System.out.print("Giriş Yaptınız");
+        } else {
+            while (true) {
+                System.out.print("Şifreniz Hatalı! Şifrenizi Sıfırlamak İstiyor musunuz?\nE-Evet / H-Hayır : ");
+                choice = input.nextLine();
+                if (Objects.equals(choice, "E") || Objects.equals(choice, "e")) {
+                    while (true) {
+                        System.out.print("Lütfen yeni şifrenizi giriniz: ");
+                        newpassword = input.nextLine();
+                        if (newpassword.equals("123456")) {
+                            System.out.println("Şifre oluşturulamadı, lütfen başka şifre giriniz.");
+                        } else {
+                            System.out.print("Şifre oluşturuldu.");
+                            break;
+                        }
+                    }
+                    break;
+                } else if (Objects.equals(choice, "H") || Objects.equals(choice, "h")) break;
+                else break;
+            }
+        }
+
+    }
+}
