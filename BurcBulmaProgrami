@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class BurcBulanProgram {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int bd, bm;
+        System.out.print("Doğduğunuz Günü Giriniz: ");
+        bd = input.nextInt();
+        System.out.print("Doğduğunuz Ayı Giriniz: ");
+        bm = input.nextInt();
+
+        if (bm == 1) {
+            if (bd <= 21) System.out.print("Oğlak Burcusunuz");
+            else System.out.print("Kova Burcusunuz");
+        } else if (bm == 2) {
+            if (bd <= 19) System.out.print("Kova Burcusunuz");
+            else System.out.print("Balık Burcusunuz");
+        } else if (bm == 3) {
+            if (bd <= 20) System.out.print("Balık Burcusunuz");
+            else System.out.print("Koç Burcusunuz");
+        } else if (bm == 4) {
+            if (bd <= 21) System.out.print("Koç Burcusunuz");
+            else System.out.print("Boğa Burcusunuz");
+        } else if (bm == 5) {
+            if (bd <= 21) System.out.print("Boğa Burcusunuz");
+            else System.out.print("İkizler Burcusunuz");
+        } else if (bm == 6) {
+            if (bd <= 22) System.out.print("İkizler Burcusunuz");
+            else System.out.print("Yengeç Burcusunuz");
+        } else if (bm == 7) {
+            if (bd <= 23) System.out.print("Yengeç Burcusunuz");
+            else System.out.print("Aslan Burcusunuz");
+        } else if (bm == 8) {
+            if (bd <= 23) System.out.print("Aslan Burcusunuz");
+            else System.out.print("Başak Burcusunuz");
+        } else if (bm == 9) {
+            if (bd <= 23) System.out.print("Başak Burcusunuz");
+            else System.out.print("Terazi Burcusunuz");
+        } else if (bm == 10) {
+            if (bd <= 23) System.out.print("Terazi Burcusunuz");
+            else System.out.print("Akrep Burcusunuz");
+        } else if (bm == 11) {
+            if (bd <= 23) System.out.print("Akrep Burcusunuz");
+            else System.out.print("Yay Burcusunuz");
+        } else if (bm == 12) {
+            if (bd <= 22) System.out.print("Yay Burcusunuz");
+            else System.out.print("Oğlak Burcusunuz");
+        } else {
+            System.out.print("Geçersiz bir ay girdiniz!");
+        }
+    }
+}
