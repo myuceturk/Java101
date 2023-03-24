@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class SayiSiralama {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int a, b, c;
+        System.out.print("1.Sayıyı Giriniz: ");
+        a = input.nextInt();
+        System.out.print("2.Sayıyı Giriniz: ");
+        b = input.nextInt();
+        System.out.print("3.Sayıyı Giriniz: ");
+        c = input.nextInt();
+
+        if (a > b) {
+            if (a > c) {
+                if (b > c) System.out.print("Sayıların Büyükten Küçükten Sıralaması:" + a + ">" + b + ">" + c);
+                else System.out.print("Sayıların Büyükten Küçükten Sıralaması:" + a + ">" + c + ">" + b);
+            } else System.out.print("Sayıların Büyükten Küçükten Sıralaması:" + c + ">" + a + ">" + b);
+        } else {
+            if (b > c) {
+                if (c > a) System.out.print("Sayıların Büyükten Küçükten Sıralaması:" + b + ">" + c + ">" + a);
+                else System.out.print("Sayıların Büyükten Küçükten Sıralaması:" + b + ">" + a + ">" + c);
+            } else System.out.print("Sayıların Büyükten Küçükten Sıralaması:" + c + ">" + b + ">" + a);
+        }
+    }
+}
