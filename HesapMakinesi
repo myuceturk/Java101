@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class HesapMakinesi {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double num1, num2, result;
+        int choice;
+        System.out.print("1-Toplama\n2-Çıkarma\n3-Bölme\n4-Çarma\nYapacağınız işlemi seçiniz:");
+        choice = input.nextInt();
+
+        System.out.print("1.Sayıyı Giriniz:");
+        num1 = input.nextDouble();
+        System.out.print("2.Sayıyı Giriniz:");
+        num2 = input.nextDouble();
+
+        switch (choice) {
+            case 1:
+                System.out.print("Sonuç= " + (num1 + num2));
+                break;
+            case 2:
+                System.out.print("Sonuç= " + (num1 - num2));
+                break;
+            case 3: {
+                if (num2 != 0)
+                    System.out.print("Sonuç= " + (num1 / num2));
+                else
+                    System.out.print("Bölen yada Bölünen 0 olamaz.");
+                break;
+            }
+            case 4:
+                System.out.print("Sonuç= " + (num1 * num2));
+                break;
+            default:
+                System.out.print("Hatalı seçim yaptnız. Lütfen sayısal bir değer giriniz ve 1 ile 4 arasında bir seçim yapınız.");
+                break;
+        }
+    }
+}
