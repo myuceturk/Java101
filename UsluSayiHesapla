@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class UsluSayiHesapla {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int a, b, total = 1;
+        System.out.print("Lütfen üssü alınacak sayı giriniz: ");
+        a = input.nextInt();
+        System.out.print("Üs olacak sayıyı giriniz: ");
+        b = input.nextInt();
+
+        for (int i = 1; i <= b; i++) {
+            total *= a;
+        }
+        System.out.print("Sonuç: " + total);
+    }
+}
