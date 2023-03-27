@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class KuvvetBulma {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int sayi;
+        System.out.print("Lütfen bir sayı giriniz: ");
+        sayi = input.nextInt();
+
+        for (int i = 1, x = 1; i <= sayi && x <= sayi; i *= 4, x *= 5) {
+            System.out.println(i + " " + x);
+        }
+    }
+}
