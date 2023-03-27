@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class KombinasyonHesaplama {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = 1, r = 1, n_total = 1, r_total = 1, nr_com_total = 1, result;
+
+        while (true) {
+            System.out.print("N değerini giriniz: ");
+            n = input.nextInt();
+            System.out.print("R değerini giriniz: ");
+            r = input.nextInt();
+            if (n > r) {
+                int nr_com = n - r;
+                for (int i = 1; i <= nr_com; i++) {
+                    nr_com_total *= i;
+                }
+                for (int x = 1; x <= r; x++) {
+                    r_total *= x;
+                }
+                for (int y = 1; y <= n; y++) {
+                    n_total *= y;
+                }
+                result = n_total / (r_total * (nr_com_total));
+                System.out.println("N Sayısının Faktöriyeli: " + n_total);
+                System.out.println("R Sayısının Faktöriyeli: " + r_total);
+                System.out.println("N-R'nin Faktöriyeli: " + nr_com_total);
+                System.out.print(n + " sayısının " + r + "'li :" + result);
+                break;
+            } else {
+                System.out.println("******* 2.Sayı 1.Sayıdan Büyük Olamaz..! *******");
+            }
+        }
+
+    }
+}
+//n! / (r! * (n-r)!)
