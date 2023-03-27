@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class TekSayiDongusu {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int sayi, topla = 0;
+        do {
+            System.out.print("Lütfen bir sayı giriniz: ");
+            sayi = input.nextInt();
+            if (sayi % 4 == 0) {
+                topla += sayi;
+            }
+        } while (sayi % 2 != 1);
+        System.out.print("Sonuç: " + topla);
+    }
+}
