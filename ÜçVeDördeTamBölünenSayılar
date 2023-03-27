@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class UcveDordeBolum {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int sayi, ortalama = 0, topla = 0, sayac = 0;
+        System.out.print("Lütfen bir sayı giriniz: ");
+        sayi = input.nextInt();
+
+        /*
+        For ile Çözüm
+        for (int i = 1; i <= sayi; i++) {
+            if ((i % 3 == 0) && (i % 4 == 0)) {
+                sayac++;
+                topla += i;
+            }
+        }
+        ortalama = topla / sayac;
+        System.out.print("3 ve 4'e tam bölünen sayıların ortalaması: " + ortalama);        
+         */
+
+        // While ile çözüm
+        while (sayi > 0) {
+            if ((sayi % 3 == 0) && (sayi % 4 == 0)) {
+                sayac++;
+                topla += sayi;
+            }
+            sayi--;
+        }
+        ortalama = topla / sayac;
+        System.out.print("3 ve 4'e tam bölünen sayıların ortalaması: " + ortalama);
+
+    }
+}
