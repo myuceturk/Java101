@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class BuyukKucukSayiBulma {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n, max = 0, min = 0;
+        System.out.print("Kaç Sayı Gireceksiniz: ");
+        n = input.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print(i + ". Sayıyı Gireceksiniz: ");
+            max = input.nextInt();
+            if (max > min) max = max;
+            else min = max;
+        }
+        System.out.println("En Büyük Sayı:" + max + "\nEn Küçük Sayı:" + min);
+    }
+}
