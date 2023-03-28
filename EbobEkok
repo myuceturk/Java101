@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class EbobEkok {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n1, n2, x, ebob = 0, ekok = 0;
+        System.out.print("N1 Sayısı Giriniz:");
+        n1 = input.nextInt();
+        System.out.print("N2 Sayısı Giriniz:");
+        n2 = input.nextInt();
+
+        if (n1 > n2) x = n1;
+        else x = n2;
+
+        int i = 1;
+        while (x >= i) {
+            if (n1 % i == 0 && n2 % i == 0) {
+                ebob = i;
+            }
+            i++;
+        }
+        ekok = n1 * n2 / ebob;
+        System.out.println("EBOB:" + ebob);
+        System.out.println("EKOK:" + ekok);
+    }
+}
