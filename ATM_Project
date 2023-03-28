@@ -1,0 +1,94 @@
+import java.util.Scanner;
+
+public class ATM_Project {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String customerNumber, password;
+        double balance = 10000, deposit;
+        int process, diff_process, rightCount = 3;
+        boolean isLogged = true;
+
+        do {
+            System.out.print("Müşteri Numaranızı Giriniz:");
+            customerNumber = input.nextLine();
+            System.out.print("Şifrenizi Giriniz:");
+            password = input.nextLine();
+            if (customerNumber.equals("123") && password.equals("123456")) {
+                System.out.println("----- Sisteme Giriş Yaptınız -----");
+                do {
+                    System.out.print("Lütfen Yapmak İstediğiniz İşlemi Seçiniz:\n1-Para Yatırma\n2-Para Çekme\n3-Bakiye Sorgulama\n4-Çıkış\n: ");
+                    process = input.nextInt();
+                    switch (process) {
+                        case 1:
+                            System.out.print("Para Yatırmak İstediğiniz Değeri Giriniz: ");
+                            deposit = input.nextDouble();
+                            if (deposit > 0) {
+                                balance += deposit;
+                                System.out.println("\n----- Para Yatırma İşemi Başarılı -----");
+                                System.out.println("Mevcut Bakiyeniz: " + balance + "TL\n");
+                                //İşlem Sonu Ekranı
+                                System.out.println("Başka İşlem Yapmak İstiyor musunuz?\n1-Evet\n2-Hayır");
+                                diff_process = input.nextInt();
+                                if (diff_process != 1) {
+                                    System.out.println("Çıkış Yaptınız. İyi Günler.");
+                                    isLogged = false;
+                                }
+                            } else {
+                                System.out.println("Hatalı Giriş Yaptınız. Eksi değer giremezsiniz!\n");
+                            }
+                            break;
+                        case 2:
+                            System.out.print("Çekmek İstediğiniz Değeri Giriniz: ");
+                            deposit = input.nextDouble();
+                            if (deposit > 0) {
+                                if (balance >= deposit) {
+                                    System.out.println("\n----- Para Çekme İşemi Başarılı -----");
+                                    balance -= deposit;
+                                    System.out.println("Mevcut Bakiyeniz: " + balance + "TL\n");
+                                } else {
+                                    System.out.println("\n----- Para Çekme İşemi Başarısız -----");
+                                    System.out.println("Hesabınızda Yeterli Bakiyeniz Bulunmamaktadır.");
+                                    System.out.println("Mevcut Bakiyeniz: " + balance + "TL\n");
+                                }
+                                //İşlem Sonu Ekranı
+                                System.out.println("Başka İşlem Yapmak İstiyor musunuz?\n1-Evet\n2-Hayır");
+                                diff_process = input.nextInt();
+                                if (diff_process != 1) {
+                                    System.out.println("Çıkış Yaptınız. İyi Günler.");
+                                    isLogged = false;
+                                    break;
+                                }
+                            } else {
+                                System.out.println("Hatalı Giriş Yaptınız. Eksi değer giremezsiniz!\n");
+                            }
+                            break;
+                        case 3:
+                            System.out.println("\nMevcut Bakiyeniz: " + balance + "TL\n");
+                            //İşlem Sonu Ekranı
+                            System.out.println("Başka İşlem Yapmak İstiyor musunuz?\n1-Evet\n2-Hayır");
+                            diff_process = input.nextInt();
+                            if (diff_process != 1) {
+                                System.out.println("Çıkış Yaptınız. İyi Günler.");
+                                isLogged = false;
+                            }
+                            break;
+                        case 4:
+                            isLogged = false;
+                            break;
+                        default:
+                            System.out.println("Hatalı Seçim Yaptınız. Lütfen 1-4 Arası Bir Seçim Yapınız.");
+                            break;
+                    }
+                } while (isLogged);
+            } else {
+                rightCount--;
+                System.out.println("Müşteri Numaranız yada Şifreniz Hatalı. Lütfen Tekrar Deneyiniz.");
+                System.out.println("Kalan Deneme Hakkınız:" + rightCount);
+                if (rightCount == 0) {
+                    System.out.println("3 Defa Hatalı Giriş Yaptınız. Hesabınız Blokelenmiştir.");
+                    break;
+                }
+            }
+        } while (isLogged);
+    }
+}
