@@ -1,0 +1,134 @@
+package Metotlar;
+
+import java.util.Scanner;
+
+public class CalculatorWithMetots {
+
+    static double sum(double a, double b) {
+        double result = a + b;
+        System.out.println("Sonuç= " + result);
+        return result;
+    }
+
+    static double minus(double a, double b) {
+        double result = a - b;
+        System.out.println("Sonuç= " + result);
+        return result;
+    }
+
+    static double multiplication(double a, double b) {
+        double result = a * b;
+        System.out.println("Sonuç= " + result);
+        return result;
+    }
+
+    static double division(double a, double b) {
+        double result = a / b;
+        System.out.println("Sonuç= " + result);
+        return result;
+    }
+
+    static int power(int a, int b) {
+        int result = (int) Math.pow(a, b);
+        System.out.println("Sonuç= " + result);
+        return result;
+    }
+
+    static int mod(int a, int b) {
+        int result = a % b;
+        System.out.println("Sonuç= " + result);
+        return result;
+    }
+
+    static void areaPerimeter(int r) {
+        double area, perimeter, pi = 3.14;
+        area = pi * r * r;
+        perimeter = 2 * pi * r;
+        System.out.println("Dairenin Alanı= " + area + "\nÇevresi= " + perimeter);
+    }
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int select, r;
+        double a, b;
+        boolean isRight = true;
+        String menu = "1-Toplama İşlemi\n" +
+                "2-Çıkarma İşlemi\n" +
+                "3-Çarpma İşlemi\n" +
+                "4-Bölme İşlemi\n" +
+                "5-Üslü Sayı Hesaplama\n" +
+                "6-Mod Alma\n" +
+                "7-Dikdörtgen Alan ve Çevre Hesaplama\n" +
+                "8-Çıkış";
+        System.out.println(menu);
+        while (isRight) {
+            System.out.print("Lütfen Yapmak İstediğiniz İşlemi Seçiniz: ");
+            select = inp.nextInt();
+            switch (select) {
+                case 1:
+                    System.out.print("1.Sayıyı Giriniz: ");
+                    a = inp.nextDouble();
+                    System.out.print("2.Sayıyı Giriniz: ");
+                    b = inp.nextDouble();
+                    sum(a, b);
+                    isRight = false;
+                    break;
+                case 2:
+                    System.out.print("1.Sayıyı Giriniz: ");
+                    a = inp.nextDouble();
+                    System.out.print("2.Sayıyı Giriniz: ");
+                    b = inp.nextDouble();
+                    minus(a, b);
+                    isRight = false;
+                    break;
+                case 3:
+                    System.out.print("1.Sayıyı Giriniz: ");
+                    a = inp.nextDouble();
+                    System.out.print("2.Sayıyı Giriniz: ");
+                    b = inp.nextDouble();
+                    multiplication(a, b);
+                    isRight = false;
+                    break;
+                case 4:
+                    System.out.print("1.Sayıyı Giriniz: ");
+                    a = inp.nextDouble();
+                    System.out.print("2.Sayıyı Giriniz: ");
+                    b = inp.nextDouble();
+                    division(a, b);
+                    isRight = false;
+                    break;
+                case 5:
+                    System.out.print("Taban Sayıyı Giriniz: ");
+                    a = inp.nextDouble();
+                    System.out.print("Kuvveti Giriniz: ");
+                    b = inp.nextDouble();
+                    power((int) a, (int) b);
+                    isRight = false;
+                    break;
+                case 6:
+                    System.out.print("1.Sayıyı Giriniz: ");
+                    a = inp.nextDouble();
+                    System.out.print("2.Sayıyı Giriniz: ");
+                    b = inp.nextDouble();
+                    mod((int) a, (int) b);
+                    isRight = false;
+                    break;
+                case 7:
+                    System.out.print("Yarı Çapı Giriniz: ");
+                    r = inp.nextInt();
+                    areaPerimeter(r);
+                    isRight = false;
+                    break;
+                case 8:
+                    System.out.print("Hesap Makinesinden Çıkış Yaptınız");
+                    isRight = false;
+                    break;
+                default:
+                    System.out.println("Hatalı Seçim Yaptınız. 1-8 arası bir seçim yapınız.");
+                    break;
+            }
+        }
+
+
+    }
+}
