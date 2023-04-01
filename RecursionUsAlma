@@ -1,0 +1,22 @@
+package Metotlar;
+
+import java.util.Scanner;
+
+public class RecursionUsAlma {
+
+    static int pow(int taban, int us) {
+        if (us == 0)
+            return 1;
+        return taban * pow(taban, (us - 1));
+    }
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int taban, us;
+        System.out.print("Taban değerini giriniz: ");
+        taban = inp.nextInt();
+        System.out.print("Üs değerini giriniz: ");
+        us = inp.nextInt();
+        System.out.println(pow(taban, us));
+    }
+}
