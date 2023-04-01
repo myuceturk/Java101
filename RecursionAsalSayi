@@ -1,0 +1,28 @@
+package Metotlar;
+
+import java.util.Scanner;
+
+public class RecursionAsalSayi {
+
+    static void primeNum(int x) {
+
+        int count = 0;
+        for (int i = 2; i <= x; ++i) {
+            if (x % i == 0) {
+                count++;
+            }
+        }
+        if (count <= 2)
+            System.out.println(x + " Bir Asal Sayıdır.");
+        else
+            System.out.println(x + " Bir Asal Sayı Değildir.");
+    }
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int x;
+        System.out.print("Sayı Giriniz: ");
+        x = inp.nextInt();
+        primeNum(x);
+    }
+}
